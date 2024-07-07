@@ -18,7 +18,7 @@
 @section('contents')
     <form class="form" action="/todos" method="POST">
         @csrf
-        <input class="form_input" type="text" name="content" value="{{ old('content') }}">
+        <input class="form_input" type="text" name="content">
         <button class="form_button" type="submit">作成</button>
     </form>
     <table class="todo-table">
@@ -27,19 +27,23 @@
         </tr>
         @foreach ($todos as $todo)
             <tr class="todo-lists__item">
-                <td class="todo-lists__item--name">
-                    <input type="text" value="{{ $todo['content'] }}">
-                </td>
-                <td class="todo-lists__item--button-set">
-                    <form class="todo-lists__item--form" action="todos/update" method="POST">
-                        @csrf
+                <form action="todos/update" method="POST">
+                    @csrf
+                    <td class="todo-lists__item--name">
+                        <input type="text" name="content" value="{{ $todo['content'] }}">
+                        <input type="hidden" name="id" value="{{ $todo['id'] }}">
+                    </td>
+                    <td class="todo-lists__item--button-column-update">
                         <button class="todo-lists__item--button todo-lists__item--button-update" type="submit">更新</button>
-                    </form>
-                    <form class="todo-lists__item--form" action="" method="POST">
-                        @csrf
+                    </td>
+                </form>
+                <form action="todos/delete" method="POST">
+                    @csrf
+                    <td class="todo-lists__item--button-column-delete">
+                        <input type="hidden" name="id" value="{{ $todo['id'] }}">
                         <button class="todo-lists__item--button todo-lists__item--button-delete" type="submit">削除</button>
-                    </form>
-                </td>
+                    </td>
+                </form>
             </tr>
         @endforeach
     </table>

@@ -1,0 +1,94 @@
+.message {
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid;
+    padding: 20px 0 20px 20px;
+    margin-top: 0;
+}
+.message-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border-color: #badbcc;
+}
+.message-error {
+    background-color: #f8d7da;
+    color: #842029;
+    border-color: #f5c2c7;
+}
+
+.form {
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    margin: 60px auto 30px;
+    padding: 0 20px;
+}
+
+.form_input {
+    display: inline-block;
+    width: 60%;
+    height: 40px;
+    border: 2px solid #dfdfdf;
+    margin-right: 40px;
+}
+.form_button {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    width: 20%;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-table {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.todo-lists__title {
+    text-align: left;
+    font-size: 24px;
+    font-weight: bold;
+}
+.todo-lists__item {
+    height: 50px;
+    border-top: 2px solid #dfdfdf;
+    border-bottom: 2px solid #dfdfdf;
+}
+
+.todo-lists__item--name {
+    text-align: left;
+    padding-left: 20px;
+}
+.todo-lists__item--name input {
+    width: 70%;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+
+.todo-lists__item--button-column-update {
+    width: 10px;
+}
+.todo-lists__item--button-column-delete {
+    width: 10px;
+    padding-right: 10px;
+}
+
+.todo-lists__item--button {
+    width: 50px;
+    height: 30px;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.todo-lists__item--button-update {
+    background-color: #0000ff;
+    padding-right: 10px;
+}
+.todo-lists__item--button-delete {
+    background-color: #ff0000;
+    margin-left: 10px;
+}

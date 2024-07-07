@@ -27,14 +27,19 @@
         </tr>
         @foreach ($todos as $todo)
             <tr class="todo-lists__item">
-                <form class="todo-lists__item--form" action="" method="POST">
-                    @csrf
-                    <th class="todo-lists__item--name">{{ $todo['content'] }}</th>
-                    <td class="todo-lists__item--button-set">
+                <td class="todo-lists__item--name">
+                    <input type="text" value="{{ $todo['content'] }}">
+                </td>
+                <td class="todo-lists__item--button-set">
+                    <form class="todo-lists__item--form" action="todos/update" method="POST">
+                        @csrf
                         <button class="todo-lists__item--button todo-lists__item--button-update" type="submit">更新</button>
+                    </form>
+                    <form class="todo-lists__item--form" action="" method="POST">
+                        @csrf
                         <button class="todo-lists__item--button todo-lists__item--button-delete" type="submit">削除</button>
-                    </td>
-                </form>
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>
